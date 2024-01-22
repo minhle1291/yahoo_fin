@@ -153,7 +153,7 @@ def tickers_nasdaq(include_company_data = False):
     '''Downloads list of tickers currently listed in the NASDAQ'''
     
     ftp = ftplib.FTP("ftp.nasdaqtrader.com")
-    ftp.login()
+    ftp.login(user="anonymous", passwd="anonymous@example.com")
     ftp.cwd("SymbolDirectory")
     
     r = io.BytesIO()
@@ -182,7 +182,7 @@ def tickers_other(include_company_data = False):
     '''Downloads list of tickers currently listed in the "otherlisted.txt"
        file on "ftp.nasdaqtrader.com" '''
     ftp = ftplib.FTP("ftp.nasdaqtrader.com")
-    ftp.login()
+    ftp.login(user="anonymous", passwd="anonymous@example.com")
     ftp.cwd("SymbolDirectory")
     
     r = io.BytesIO()
